@@ -26,7 +26,55 @@ if ( ! function_exists( 'eleven_promotion_bar' ) ) {
 <?php
 	}
 }
+// header left wrapper open
+add_action( 'storefront_header', 'eleven_header_left_wrap_open', 19);
+if ( ! function_exists( 'eleven_header_left_wrap_open' ) ) {
+	function eleven_header_left_wrap_open() {
+		echo '<div class="header-left">';
+	}
 
+}
+// header left wrapper close
+add_action( 'storefront_header', 'eleven_header_left_wrap_close', 21);
+if ( ! function_exists( 'eleven_header_left_wrap_close' ) ) {
+	function eleven_header_left_wrap_close() {
+        echo '</div>';
+        echo '<div class="header-right">'; 
+        echo '<div class="header-right-top">';  
+	}
+
+}
+
+
+// header right menu
+add_action( 'storefront_header', 'eleven_header_right_menu', 41);
+if ( ! function_exists( 'eleven_header_right_menu' ) ) {
+	function eleven_header_right_menu() {
+		 wp_nav_menu( array(
+			'theme_location' => 'header-right-menu',
+			'menu_id'        => 'header-right-menu',
+		) );
+	}
+
+}
+// header right wrapper close
+add_action( 'storefront_header', 'eleven_header_right_top_close', 41);
+if ( ! function_exists( 'eleven_header_right_top_close' ) ) {
+	function eleven_header_right_top_close() {
+        echo '</div>';
+       
+	}
+
+}
+// header right wrapper close
+add_action( 'storefront_header', 'eleven_header_right_wrap_close', 70);
+if ( ! function_exists( 'eleven_header_right_wrap_close' ) ) {
+	function eleven_header_right_wrap_close() {
+        echo '</div>';
+       
+	}
+
+}
 // footer features
 add_action( 'storefront_before_footer', 'footer_feature', 10);
 if ( ! function_exists( 'footer_feature' ) ) {
