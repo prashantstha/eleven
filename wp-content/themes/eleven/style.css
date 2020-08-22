@@ -1,0 +1,24 @@
+/*
+Theme Name:   	Eleven
+Theme URI:    	
+Author:       	
+Author URI:     
+Template:     	storefront
+Description:  	This is a blank child theme for Eleven Orphic
+Version:      	1.0.0
+License:      	
+License URI:  	
+Text Domain:  	storefront
+Tags:         	
+*/
+/*
+ * Add your own custom css below this text.
+ */
+.page-template-template-homepage .col-full,
+.page-template-template-homepage .entry-content,
+.page-template-template-homepage .entry-header {
+  width: 100%;
+  padding: 0;
+  max-width: 100%; }
+
+/*# sourceMappingURL=style.css.map */
