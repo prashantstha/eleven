@@ -14,6 +14,7 @@ var replace = require("gulp-replace");
 // File paths
 const files = {
   scssPath: "assets/scss/**/*.scss",
+  owlPath: 'node_modules/owl.carousel2/dist/owl.carousel.js',
   jsPath: "assets/js/**/*.js",
 };
 
@@ -30,7 +31,7 @@ function scssTask() {
 // JS task: concatenates and uglifies JS files to script.js
 function jsTask() {
   return src([
-    // files.stickySidebar,
+    files.owlPath,
     files.jsPath,
     //,'!' + 'includes/js/jquery.min.js', // to exclude any specific files
   ])
