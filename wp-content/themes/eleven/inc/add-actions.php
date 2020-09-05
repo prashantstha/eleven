@@ -12,7 +12,7 @@ if ( ! function_exists( 'eleven_promotion_bar' ) ) {
 <div class="promotion-bar">
     <div class="container">
         <?php if( have_rows('promotion_contents', 'option') ): ?>
-        <ul class="slides">
+        <ul class="slides owl-carousel owl-theme">
             <?php while( have_rows('promotion_contents', 'option') ): the_row(); 
         ?>
             <li>
@@ -95,7 +95,8 @@ if ( ! function_exists( 'footer_feature' ) ) {
             <li>
                 <?php if( $icon ) { ?>
                 <div class="icon-wrap">
-                    <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['title']; ?>"></div>
+                    <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['title']; ?>">
+                </div>
                 <?php } ?>
                 <?php if( $title ) { ?>
                 <h3><?php echo $title; ?></h3>
