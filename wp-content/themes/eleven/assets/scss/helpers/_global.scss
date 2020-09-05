@@ -1,0 +1,88 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 16px;
+}
+body, p{
+	color: $dark-gray;
+	font: $regular 16px/29px $font;
+}
+h1,h2,h3,h4,h5,h6{
+	line-height: 1;
+	font-weight: $semi;
+	color: $text;
+}
+ 
+h1{
+	font-size: 50px;
+	line-height: 52px;
+	letter-spacing: -0.5px;
+	font-weight: $bold;
+	@include breakpoint(md) {
+		font-size: 65px;
+		line-height: 75px;
+		letter-spacing: 10px;
+	}
+	@include breakpoint(xxl) {
+		font-size: 80px;
+		line-height: 102px; 
+	}
+}
+h2{
+	font-size: rem-calc(40);
+	line-height: rem-calc(50);
+	@include breakpoint(md) {
+		font-size: 70px;
+		line-height: 72px;
+	}
+}
+h3{
+	font-size: 30px;
+	line-height: 44px;
+	letter-spacing: -0.5px;
+	font-weight: $medium;
+	@include breakpoint(md) {
+		font-size: 40px;
+		font-weight: $semi;
+	}
+}
+h4, h5{
+	font-size: 18px;
+	line-height: 24px;
+	letter-spacing: 0.1px;
+}
+
+p{
+	margin-bottom: 20px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+a{
+  text-decoration: none;
+	@include transition(all,.2s,linear);
+  	color: $dark-gray;
+	&:hover{
+		text-decoration: none;
+		color: $primary;
+	}
+}
+ul,ol,li{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+strong,b{
+	font-weight: $bold;
+}
+em,i{
+  font-style: italic;
+}
+
+img{
+	max-width: 100%;
+}
