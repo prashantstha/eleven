@@ -19,13 +19,19 @@ function sf_child_theme_dequeue_style() {
     wp_dequeue_style( 'storefront-woocommerce-style' );
 }
 
-wp_enqueue_script( 'enleven-bundle', 
-get_template_directory_uri() . '/assets/dist/js/enleven-bundle.js',array(), '', true );
-
 /**
  * Note: DO NOT! alter or remove the code above this text and only add your custom PHP functions below this text.
  */
 define( 'ELEVEN_THEME_URL', get_stylesheet_directory() );
+
+add_action( 'wp_enqueue_scripts', 'menu_scripts' );
+function menu_scripts() {
+wp_enqueue_script(
+    'enleven-bundle',
+    get_bloginfo( 'stylesheet_directory' ) . '/assets/dist/js/enleven-bundle.js',
+    array( 'jquery' )
+);
+        }
 /**
  * Theme options
  */
