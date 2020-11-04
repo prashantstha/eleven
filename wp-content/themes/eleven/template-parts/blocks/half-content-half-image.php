@@ -67,24 +67,8 @@ if( $block_type === 'type_two' ) {
             <div class="half-image">
                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
             </div>
+            <?php } ?>
         </div>
-        <?php } ?>
-    </div>
-</div>
 
-<div class="organic-straws">
-    <div class="container">
-        <div class="organic-list">
-            <h3>What makes our straws Sustainable?</h3>
-            <ul>
-                <li>Made from Natural Materials</li>
-                <li>100% Biodegradable Material made from freshly chopped Bamboos</li>
-                <li>Does not Dissolve</li>
-                <li>Marine Edible and Easily Disposable</li>
-                <li>Easily Decomposable on Natural Environment</li>
-                <li>100% Compostable</li>
-                <li>No Toxins Released after Incinerated</li>
-            </ul>
-        </div>
     </div>
 </div>

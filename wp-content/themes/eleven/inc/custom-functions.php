@@ -27,3 +27,10 @@ function pr($data){
 register_nav_menus( array(
 	'header-right-menu' => esc_html__( 'Header right menu ', 'storefront' ),
 ) );
+
+
+function image_alt_tag( $image = null )
+{
+	if( $image == null )	return;
+	echo $image['alt'] ? $image['alt'] : $image['title'] ? $image['title'] : 'No ALT-Tag';
+}

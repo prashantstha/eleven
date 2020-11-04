@@ -9,15 +9,15 @@
 
 ?>
 
-		</div><!-- .col-full -->
-	</div><!-- #content -->
+</div><!-- .col-full -->
+</div><!-- #content -->
 
-	<?php do_action( 'storefront_before_footer' ); ?>
+<?php do_action( 'storefront_before_footer' ); ?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="col-full">
-
-			<?php
+<footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="col-full">
+        <div class="container">
+            <?php
 			/**
 			 * Functions hooked in to storefront_footer action
 			 *
@@ -26,15 +26,16 @@
 			 */
 			do_action( 'storefront_footer' );
 			?>
+        </div>
+    </div><!-- .col-full -->
+</footer><!-- #colophon -->
 
-		</div><!-- .col-full -->
-	</footer><!-- #colophon -->
-
-	<?php do_action( 'storefront_after_footer' ); ?>
+<?php do_action( 'storefront_after_footer' ); ?>
 
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

@@ -27,12 +27,26 @@ if( !empty($block['align']) ) {
 // Load values and assign defaults.
 $title = get_field('title') ?: 'Your title here...';
 $description = get_field('description') ?: 'Description';
-$banner_image = get_field('banner_image');
 
+$choose_banner_media = get_field('choose_banner_media');
+if( $choose_banner_media == 'image') {
+    $banner_image = get_field('banner_image');
+    if( $banner_image ) {
+        $banner_style = 'style="background-image:url(' . $banner_image['url'] . ')"';
+    }
+}
+if( $choose_banner_media == 'video') {
+    $banner_video = get_field('banner_video');
+}
 
 ?>
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>"
-    style="background-image:url(<?php echo $banner_image['url']; ?>)">
+<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>" <?php echo $banner_style; ?>>
+    <?php if( $banner_video ) { ?>
+    <div class="video-container">
+        <video loop autoplay playsinline muted id="bannerVideo" src="<?php echo $banner_video['url']; ?>"></video>
+
+    </div>
+    <?php } ?>
     <div class="container">
         <div class="banner-content">
             <h2><?php echo $title; ?></h2>
@@ -50,35 +64,3 @@ $banner_image = get_field('banner_image');
         </div>
     </div>
 </div>
-
-<div class="eo-about">
-    <div class="container">
-        <div class="d-flex flex-wrap align-items-center">
-            <div class="about-image" style="background-image: url('http://localhost/eleven/wp-content/uploads/2020/08/vneck-tee-2.jpg');">
-                
-            </div>
-            <div class="about-intro align-self-baseline">
-                <div class="about-icon">
-                    <img src="http://localhost/eleven/wp-content/uploads/2020/08/about-icon.png">
-                </div>
-                <h3>Drinking Straws Made From Plant</h3>
-                <p>It’s simple, really. Nature makes lots of things which are functional and beautiful, but they were forgotten with the invention of synthetic materials. We're just bringing back natures original straws, which are hand harvested by our farmers. No pesticides, no processing, no nasties. Simple, the way nature intended.</p>
-                <a href="#" class="btn btn-border">Learn More</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- <div class="switch-to-eo">
-    <div class="container">
-        <div clas="switch-desc">
-            <h2>SWITCH TO <b>PLANT</b> BASED <b>STRAWS</b></h2>
-            <p>Your new favorite t-shirts for sunny skies from organic cotton to wicking performance</p>
-            <a href="#" class="btn btn-white">Shop Now</a>
-        </div>
-        <div class="switch-image">
-            <img src="http://localhost/eleven/wp-content/uploads/2020/08/switch-image.jpg">
-        </div>
-    </div>
-</div> -->
