@@ -1,0 +1,60 @@
+.eo-about{
+	margin: 80px 0;
+}
+.about-icon{
+	height: 110px;
+	width: 110px;
+	margin-bottom: 45px;
+}
+.about-image{
+	background-size: cover; 
+	width: 360px; 
+	height: 490px;
+	background-position: center;
+}
+.about-intro{
+	width: calc(100% - 360px);
+	text-align: left;
+	padding-left: 45px;
+	h3{
+		color: $primary;
+		margin-bottom: 25px;
+	}
+	p{
+		font-size: 19px;
+		margin-bottom: 30px;
+	}
+}
+
+
+// category list section
+.featured-category-lists{
+	@include flexbox();
+	@include flex-wrap(wrap);
+	@include justify-content(space-between);
+	margin: 0 -15px 100px;
+	.featured-category-lists-item{
+		width: 33.33333333%;
+		padding: 0 15px;
+		.content{
+			text-align: left;
+		}
+		.tag{
+			display: none;
+		}
+		h3{
+			font-size: 18px;
+			text-transform: uppercase;
+			line-height: 35px;
+    		margin-top: 10px;
+    		letter-spacing: 0.5px;
+		}
+		.description{
+			color: $gray;
+			font-size: 15px;
+			font-weight: $semi;
+			text-transform: uppercase;
+			margin-bottom: 15px;
+		}
+	}
+}

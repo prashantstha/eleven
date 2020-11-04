@@ -37,6 +37,12 @@ if( !empty($block['align']) ) {
                 $tag = get_sub_field('tag');
                 ?>
             <div class="featured-category-lists-item">
+                <?php if( $image ) { ?>
+                <div class="image"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"></div>
+                <?php } ?>
+                <?php if( $tag ) { ?>
+                <div class="tag"><?php echo $tag; ?></div>
+                <?php } ?>
                 <div class="content">
                     <?php if( $title ) { ?>
                     <h3><?php echo $title; ?></h3>
@@ -46,17 +52,11 @@ if( !empty($block['align']) ) {
                     <?php } ?>
                     <?php if( $link ) { ?>
                     <div class="btn-wrap">
-                        <a href="<?php echo $link['url']; ?>"
+                        <a class="btn btn-primary" href="<?php echo $link['url']; ?>"
                             <?php if( $link['target'] ) { echo ' target="_blank"'; } ?>><?php echo $link['title']; ?></a>
                     </div>
                     <?php } ?>
                 </div>
-                <?php if( $image ) { ?>
-                <div class="image"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>"></div>
-                <?php } ?>
-                <?php if( $tag ) { ?>
-                <div class="tag"><?php echo $tag; ?></div>
-                <?php } ?>
             </div>
             <?php endwhile; ?>
             <?php endif; ?>

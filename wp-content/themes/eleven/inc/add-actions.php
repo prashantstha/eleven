@@ -87,7 +87,7 @@ if ( ! function_exists( 'footer_feature' ) ) {
 <div class="footer-features" <?php echo ' ' . $section_bg; ?>>
     <div class="container">
         <?php if( have_rows('feature_list', 'option') ): ?>
-        <ul class="slides">
+        <ul class="service-process d-flex flex-wrap align-items-center justify-content-around">
             <?php while( have_rows('feature_list', 'option') ): the_row(); 
         $icon = get_sub_field('icon');
         $title = get_sub_field('title');

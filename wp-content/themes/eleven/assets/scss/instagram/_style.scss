@@ -1,0 +1,19 @@
+h2.has-text-align-center{
+	font-size: 32px;
+	font-weight: $bold;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+}
+
+#sb_instagram{
+	padding-bottom: 0 !important;
+	#sbi_images{
+		padding: 0 !important;
+		.sbi_item{
+			padding: 0 1px !important;
+		}
+	}
+	.sbi_follow_btn{
+		display: none;
+	}
+}
