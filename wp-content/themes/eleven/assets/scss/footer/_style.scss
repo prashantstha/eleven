@@ -1,0 +1,58 @@
+.footer-features{
+	background-image: url('http://localhost/eleven/wp-content/uploads/2020/08/pattern-footer.png') !important;
+	padding: 115px 0;
+	.icon-wrap{
+		text-align: center;
+		img{
+			display: inline-block;
+		}
+	}
+}
+
+footer.site-footer{
+	background-color: $light-gray !important;
+	padding: 0;
+	a{
+		&:not(.button){
+			&:not(.components-button){
+				color: $white;
+			}
+		}
+	}
+	.footer-widgets{
+		span.widget-title{
+			color: $white;
+			font-size: 18px;
+			font-weight: $semi;
+			padding: 0;
+			margin-bottom: 25px; 
+			border: none;
+		}
+		ul{
+			li{
+				padding-left: 0;
+				&:before{
+					content: none;
+				}
+				a{
+					color: $white;
+					font-size: 15px;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	.site-info{
+		background-color: $dark-gray;
+		color: $white;
+		@include flexbox();
+		@include flex-wrap(wrap);
+		padding: 35px 0;
+		span[role="separator"]{
+			margin: 0 20px;
+		}
+		a{
+			text-decoration: none;
+		}
+	}
+}

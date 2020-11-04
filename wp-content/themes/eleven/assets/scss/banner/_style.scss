@@ -1,0 +1,36 @@
+.page-template-template-homepage{
+	&:not(.has-post-thumbnail){
+		.site-main{
+			padding-top: 0;
+            margin-bottom: 0;
+		}
+	}
+	.type-page{
+		padding-top: 0;
+	}
+}
+
+.full-width-banner {
+    height: 590px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include flexbox();
+    @include flex-wrap(wrap);
+    @include align-items(center);
+    text-align: right;
+    h2,p{
+    	color: $white;
+    }
+    h2{
+    	margin-bottom: 20px;
+    }
+    a{
+    	background-color: $white;
+    	width: 175px;
+    	height: 45px;
+    	text-align: center;
+    	line-height: 45px;
+    	display: inline-block;
+    	text-decoration: none !important;
+    }
+}

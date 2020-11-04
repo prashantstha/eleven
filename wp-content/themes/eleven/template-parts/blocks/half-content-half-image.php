@@ -43,29 +43,48 @@ if( $block_type === 'type_two' ) {
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> <?php echo esc_attr($block_type); ?>"
     <?php echo ' ' . $section_bg; ?>>
     <div class="container">
-        <div class="half-content" <?php echo ' ' . $half_content_bg; ?>>
-            <?php if( $icon ) { ?>
-            <div class="icon">
-                <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['title']; ?>">
+        <div class="d-flex flex-wrap align-items-center position-relative">
+            <div class="half-content" <?php echo ' ' . $half_content_bg; ?>>
+                <?php if( $icon ) { ?>
+                <div class="icon">
+                    <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['title']; ?>">
+                </div>
+                <?php } ?>
+                <?php if( $title ) { ?>
+                <h2>SWITCH TO <b>PLANT</b> BASED <b>STRAWS</b></h2>
+                <?php } ?>
+                <?php if( $description ) { ?>
+                <p>Your new favorite t-shirts for sunny skies from organic cotton to wicking performance</p>
+                <?php } ?>
+                <?php if( $button ) { ?>
+                <div class="btn-wrap">
+                    <a class="btn btn-white" href="<?php echo $button['url']; ?>"
+                        <?php if( $button['target'] ) { echo ' target="_blank"'; } ?>><?php echo $button['title']; ?></a>
+                </div>
+                <?php } ?>
             </div>
-            <?php } ?>
-            <?php if( $title ) { ?>
-            <h2><?php echo $title; ?></h2>
-            <?php } ?>
-            <?php if( $description ) { ?>
-            <p><?php echo $description; ?></p>
-            <?php } ?>
-            <?php if( $button ) { ?>
-            <div class="btn-wrap">
-                <a href="<?php echo $button['url']; ?>"
-                    <?php if( $button['target'] ) { echo ' target="_blank"'; } ?>><?php echo $button['title']; ?></a>
+            <?php if( $image ) { ?>
+            <div class="half-image">
+                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
             </div>
-            <?php } ?>
-        </div>
-        <?php if( $image ) { ?>
-        <div class="half-image">
-            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
         </div>
         <?php } ?>
+    </div>
+</div>
+
+<div class="organic-straws">
+    <div class="container">
+        <div class="organic-list">
+            <h3>What makes our straws Sustainable?</h3>
+            <ul>
+                <li>Made from Natural Materials</li>
+                <li>100% Biodegradable Material made from freshly chopped Bamboos</li>
+                <li>Does not Dissolve</li>
+                <li>Marine Edible and Easily Disposable</li>
+                <li>Easily Decomposable on Natural Environment</li>
+                <li>100% Compostable</li>
+                <li>No Toxins Released after Incinerated</li>
+            </ul>
+        </div>
     </div>
 </div>

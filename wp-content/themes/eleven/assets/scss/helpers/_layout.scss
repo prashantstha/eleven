@@ -2931,6 +2931,9 @@
   @include breakpoint(xl) {
     width: 1140px;
   }
+  @include breakpoint(lm){
+    width: 1270px;
+  }
   @include breakpoint(xxl) {
     width: 1430px;
     padding: 0 11px;

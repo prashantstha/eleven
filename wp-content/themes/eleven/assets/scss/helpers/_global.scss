@@ -7,13 +7,13 @@ html{
   font-size: 16px;
 }
 body, p{
-	color: $dark-gray;
+	color: $dark;
 	font: $regular 16px/29px $font;
 }
 h1,h2,h3,h4,h5,h6{
 	line-height: 1;
-	font-weight: $semi;
-	color: $text;
+	font-weight: $semi; 
+	color: $dark;
 }
  
 h1{
@@ -45,7 +45,7 @@ h3{
 	letter-spacing: -0.5px;
 	font-weight: $medium;
 	@include breakpoint(md) {
-		font-size: 40px;
+		font-size: 36px;
 		font-weight: $semi;
 	}
 }
@@ -85,4 +85,73 @@ em,i{
 
 img{
 	max-width: 100%;
+}
+
+
+a:focus, 
+button:focus, 
+.button.alt:focus, 
+input:focus, 
+textarea:focus, 
+input[type="button"]:focus, 
+input[type="reset"]:focus, 
+input[type="submit"]:focus, 
+input[type="email"]:focus, 
+input[type="tel"]:focus, 
+input[type="url"]:focus, 
+input[type="password"]:focus, 
+input[type="search"]:focus{
+	outline: none;
+}
+
+.position-relative{
+	position: relative;
+}
+
+
+// BUTTONS
+
+.btn {
+    color: $dark;
+    text-decoration: none !important;
+    padding: 8px 20px;
+    display: inline-block;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: $semi;
+	font-size: 14px;
+    &:hover{
+    	background-color: $primary;
+    	color: $white;
+    }
+}
+
+.btn-border {
+    border: 2px solid #333;
+    text-decoration: none;
+    &:hover{
+    	border-color: $primary;
+    }
+}
+
+.btn-primary{
+	background-color: $primary;
+	border-color: $primary;
+	color: $white;
+	text-transform: uppercase;
+	&:hover{
+		background-color: $gray;
+		border-color: $gray;
+	}
+}
+
+.btn-white{
+	background-color: $white;
+	border-color: $white;
+	color: $black;
+	&:hover{
+		background-color: $primary;
+		border-color: $primary;
+	}
 }
