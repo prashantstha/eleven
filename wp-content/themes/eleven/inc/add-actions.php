@@ -30,7 +30,7 @@ if ( ! function_exists( 'eleven_promotion_bar' ) ) {
 add_action( 'storefront_header', 'eleven_header_left_wrap_open', 19);
 if ( ! function_exists( 'eleven_header_left_wrap_open' ) ) {
 	function eleven_header_left_wrap_open() {
-		echo '<div class="header-left">';
+		echo '<div class="container"><div class="header-left">';
 	}
 
 }
@@ -62,7 +62,7 @@ if ( ! function_exists( 'eleven_header_right_menu' ) ) {
 add_action( 'storefront_header', 'eleven_header_right_wrap_close', 70);
 if ( ! function_exists( 'eleven_header_right_wrap_close' ) ) {
 	function eleven_header_right_wrap_close() {
-        echo '</div>';
+        echo '</div></div>';
        
 	}
 

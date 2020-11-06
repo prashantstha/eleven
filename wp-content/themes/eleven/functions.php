@@ -24,6 +24,12 @@ function sf_child_theme_dequeue_style() {
  */
 define( 'ELEVEN_THEME_URL', get_stylesheet_directory() );
 
+// This theme uses wp_nav_menu() in one location.
+register_nav_menus( array(
+    'footer-menu' => esc_html__( 'Footer menu', 'enleven' ),
+) );
+
+
 add_action( 'wp_enqueue_scripts', 'menu_scripts' );
 function menu_scripts() {
 wp_enqueue_script(
