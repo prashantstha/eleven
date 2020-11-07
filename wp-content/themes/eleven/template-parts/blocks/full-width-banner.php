@@ -52,14 +52,14 @@ if( $choose_banner_media == 'video') {
             <h2><?php echo $title; ?></h2>
             <p><?php echo $description; ?></p>
             <div class="btn-wrap">
-                <?php if( have_rows('buttons') ) : ?>
-                <?php while( have_rows('buttons') ): the_row();
+                <?php if( have_rows('buttons') ) :
+                    while( have_rows('buttons') ): the_row();
                         $button = get_sub_field('button');
-                        ?>
-                <a href="<?php echo $button['url']; ?>"
-                    <?php if( $button['target'] ) { echo ' target="_blank"'; } ?>><?php echo $button['title']; ?></a>
-                <?php endwhile; ?>
-                <?php endif; ?>
+                ?>
+                <a href="<?php echo $button['url']; ?>" <?php if( $button['target'] ) { ?> target="_blank"
+                    <?php } ?>><?php echo $button['title']; ?></a>
+                <?php endwhile;
+            endif; ?>
             </div>
         </div>
     </div>
