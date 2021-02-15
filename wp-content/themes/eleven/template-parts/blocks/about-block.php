@@ -38,7 +38,7 @@ $button = get_field('button');
         <div class="d-flex flex-wrap align-items-center">
             <div class="about-image" style="background-image: url('<?php echo $image['url']; ?>');"></div>
             <div class="about-intro align-self-baseline">
-                <?php if( $icon ) {?>
+                <?php if( $icon ) { ?>
                 <div class="about-icon">
                     <img src="<?php echo $icon['url']; ?>" alt="<?php image_alt_tag($icon); ?>">
                 </div>

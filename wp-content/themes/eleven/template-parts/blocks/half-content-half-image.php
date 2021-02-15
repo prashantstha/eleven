@@ -51,10 +51,10 @@ if( $block_type === 'type_two' ) {
                 </div>
                 <?php } ?>
                 <?php if( $title ) { ?>
-                <h2>SWITCH TO <b>PLANT</b> BASED <b>STRAWS</b></h2>
+                <h2><?php echo $title; ?></h2>
                 <?php } ?>
                 <?php if( $description ) { ?>
-                <p>Your new favorite t-shirts for sunny skies from organic cotton to wicking performance</p>
+                <p><?php echo $description; ?></p>
                 <?php } ?>
                 <?php if( $button ) { ?>
                 <div class="btn-wrap">
