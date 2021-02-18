@@ -1,8 +1,6 @@
 <?php
 /**
  * LegacyProxy class file.
- *
- * @package Automattic/WooCommerce/Tools/Proxies
  */
 
 namespace Automattic\WooCommerce\Proxies;
@@ -16,8 +14,6 @@ use \Psr\Container\ContainerInterface;
  * This class should be used to interact with code outside the `src` directory, especially functions and classes
  * in the `includes` directory, unless a more specific proxy exists for the functionality at hand (e.g. `ActionsProxy`).
  * Idempotent functions can be executed directly.
- *
- * @package Automattic\WooCommerce\Proxies
  */
 class LegacyProxy {
 
@@ -54,6 +50,11 @@ class LegacyProxy {
 		// If the class is a singleton, use the "instance" method.
 		if ( method_exists( $class_name, 'instance' ) ) {
 			return $class_name::instance( ...$args );
+		}
+
+		// If the class has a "load" method, use it.
+		if ( method_exists( $class_name, 'load' ) ) {
+			return $class_name::load( ...$args );
 		}
 
 		// Fallback to simply creating a new instance of the class.
