@@ -38,6 +38,28 @@ if ( ! function_exists( 'eleven_header_left_wrap_open' ) ) {
 add_action( 'storefront_header', 'eleven_header_left_wrap_close', 21);
 if ( ! function_exists( 'eleven_header_left_wrap_close' ) ) {
 	function eleven_header_left_wrap_close() {
+        ?>
+<nav id="site-navigation" class="main-navigation" role="navigation"
+    aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
+    <button class="menu-toggle" aria-controls="site-navigation"
+        aria-expanded="false"><span><?php echo esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ); ?></span></button>
+    <?php
+			wp_nav_menu(
+				array(
+					'theme_location'  => 'primary',
+					'container_class' => 'primary-navigation',
+				)
+			);
+
+			wp_nav_menu(
+				array(
+					'theme_location'  => 'handheld',
+					'container_class' => 'handheld-navigation',
+				)
+			);
+			?>
+</nav><!-- #site-navigation -->
+<?php 
         echo '</div>';
         echo '<div class="header-right">'; 
         

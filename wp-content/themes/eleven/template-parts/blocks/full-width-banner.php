@@ -36,17 +36,29 @@ if( $choose_banner_media == 'image') {
     }
 }
 if( $choose_banner_media == 'video') {
-    $banner_video = get_field('banner_video');
+    $choose_video_type = get_field('choose_video_type');
+    if( $choose_video_type === 'mp4' ) {
+        $banner_video = get_field('banner_video');
+    }
+    if( $choose_video_type === 'mp4' ) {
+        $banner_video = get_field('banner_video');
+    }
+    if( $choose_video_type === 'youtube' ) {
+        $youtube_video = get_field('youtube_video');
+    }
+    
 }
+
+
 
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>" <?php echo $banner_style; ?>>
-    <?php if( $banner_video ) { ?>
     <div class="video-container">
+        <?php if( $banner_video ) { ?>
         <video loop autoplay playsinline muted id="bannerVideo" src="<?php echo $banner_video['url']; ?>"></video>
-
+        <?php } ?>
+        <?php if( $youtube_video ) { echo $youtube_video; } ?>
     </div>
-    <?php } ?>
     <div class="container">
         <div class="banner-content">
             <h2><?php echo $title; ?></h2>

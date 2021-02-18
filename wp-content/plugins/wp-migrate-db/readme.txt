@@ -3,9 +3,9 @@ Contributors: bradt, deliciousbrains
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5VPMGLLK94XJC
 Tags: Export WordPress, Migrate WordPress, WordPress database plugin, WordPress migration plugin, WP Migrate DB
 Requires at least: 3.6
-Tested up to: 5.4
+Tested up to: 5.5.1
 Requires PHP: 5.4
-Stable tag: 1.0.15
+Stable tag: 1.0.17
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -185,6 +185,20 @@ Find out all relevant [pricing information over on our official site](https://de
 3. Saving the exported database
 
 == Changelog ==
+
+= WP Migrate DB 1.0.17 - 2021-02-03  =
+
+* Bug fix: Deprecated PHP code causes warnings in PHP 8+
+* Bug fix: Regex to match recursive serialized records matches non-serialized data
+* Bug fix: Invert selection UI option doesn't work on newer versions of WordPress
+* Improvement: Fix several styling issues
+* Improvement: Replace ANSI quotes with backticks for better MySQL compatibility
+
+= WP Migrate DB 1.0.16 - 2020-09-14  =
+
+* Bug fix: Find & Replace migrations do not replace data that is JSON encoded
+* Bug fix: The `Filesystem::chmod()` method does not function correctly and silently logs an error
+* Bug fix: Running a migration without find and replace values throws a PHP warning
 
 = WP Migrate DB 1.0.15 - 2020-07-30  =
 * Bug fix: Check boxes are not saved correctly in plugin settings

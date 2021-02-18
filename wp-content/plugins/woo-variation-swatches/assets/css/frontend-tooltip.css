@@ -1,8 +1,8 @@
 /*!
- * Variation Swatches for WooCommerce v1.0.85 
+ * Variation Swatches for WooCommerce v1.1.10 
  * 
  * Author: Emran Ahmed ( emran.bd.08@gmail.com ) 
- * Date: 7/12/2020, 7:52:58 PM
+ * Date: 2/16/2021
  * Released under the GPLv3 license.
  */
 .woo-variation-swatches .radio-variable-item[data-wvstooltip] {
@@ -43,17 +43,17 @@
   left: 100%;
 }
 
-.variable-items-wrapper [data-wvstooltip],
-.variable-items-wrapper .wvs-has-image-tooltip {
+[data-wvstooltip],
+.wvs-has-image-tooltip {
   position: relative;
   cursor: pointer;
   outline: none;
 }
 
-.variable-items-wrapper [data-wvstooltip]:before,
-.variable-items-wrapper [data-wvstooltip]:after,
-.variable-items-wrapper .wvs-has-image-tooltip:before,
-.variable-items-wrapper .wvs-has-image-tooltip:after {
+[data-wvstooltip]:before,
+[data-wvstooltip]:after,
+.wvs-has-image-tooltip:before,
+.wvs-has-image-tooltip:after {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
@@ -65,42 +65,50 @@
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
-  -webkit-transition: opacity 300ms linear, bottom 300ms linear;
   transition: opacity 300ms linear, bottom 300ms linear;
 }
 
-.variable-items-wrapper [data-wvstooltip]:before,
-.variable-items-wrapper .wvs-has-image-tooltip:before {
+[data-wvstooltip]:before,
+.wvs-has-image-tooltip:before {
   margin-bottom: 5px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   padding: 7px;
   border-radius: 3px;
-  background-color: #000000;
+  background-color: #000;
   background-color: rgba(51, 51, 51, 0.9);
-  color: #FFFFFF;
+  color: #fff;
   text-align: center;
   font-size: 14px;
   line-height: 1.2;
 }
 
-.variable-items-wrapper [data-wvstooltip]:before {
+[data-wvstooltip]:before {
   min-width: 100px;
   content: attr(data-wvstooltip);
 }
 
-.variable-items-wrapper .wvs-has-image-tooltip:before {
-  content: " ";
+.wvs-has-image-tooltip:before {
+  content: attr(data-title);
   background-image: var(--tooltip-background);
+  background-repeat: no-repeat;
   width: var(--tooltip-width);
-  height: var(--tooltip-height);
-  background-size: cover;
+  height: calc( var(--tooltip-height) + 20px);
+  background-size: contain;
   border: 2px solid;
-  background-position: center center;
+  background-position: center top;
+  padding: 0;
+  line-height: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 12px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
-.variable-items-wrapper [data-wvstooltip]:after,
-.variable-items-wrapper .wvs-has-image-tooltip:after {
+[data-wvstooltip]:after,
+.wvs-has-image-tooltip:after {
   margin-left: -5px;
   width: 0;
   border-top: 5px solid #000000;
@@ -112,10 +120,10 @@
   line-height: 0;
 }
 
-.variable-items-wrapper [data-wvstooltip]:hover:before,
-.variable-items-wrapper [data-wvstooltip]:hover:after,
-.variable-items-wrapper .wvs-has-image-tooltip:hover:before,
-.variable-items-wrapper .wvs-has-image-tooltip:hover:after {
+[data-wvstooltip]:hover:before,
+[data-wvstooltip]:hover:after,
+.wvs-has-image-tooltip:hover:before,
+.wvs-has-image-tooltip:hover:after {
   bottom: 120%;
   visibility: visible;
   opacity: 1;
