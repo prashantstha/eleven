@@ -69,7 +69,7 @@ if ( ! function_exists( 'eleven_header_left_wrap_close' ) ) {
 
 
 // header right menu
-add_action( 'storefront_header', 'eleven_header_right_menu', 22);
+// add_action( 'storefront_header', 'eleven_header_right_menu', 22);
 if ( ! function_exists( 'eleven_header_right_menu' ) ) {
 	function eleven_header_right_menu() {
 		 wp_nav_menu( array(

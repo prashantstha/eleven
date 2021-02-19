@@ -8,12 +8,12 @@
 }
 .about-image{
 	background-size: cover; 
-	width: 360px; 
+	width: 450px; 
 	height: 490px;
 	background-position: center;
 }
 .about-intro{
-	width: calc(100% - 360px);
+	width: calc(100% - 450px);
 	text-align: left;
 	padding-left: 45px;
 	h3{
@@ -33,6 +33,10 @@
 	@include flex-wrap(wrap);
 	@include justify-content(space-between);
 	margin: 0 -15px 100px;
+	.image{
+		height: 410px;
+		overflow: hidden;
+	}
 	.featured-category-lists-item{
 		width: 33.33333333%;
 		padding: 0 15px;

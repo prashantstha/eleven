@@ -33,12 +33,20 @@ header{
 		@include justify-content(flex-end);
 	}
 }
-
+.header-left, .header-right{
+	display: inline-block;
+	width: auto;
+}
 .header-right{
-	@include flexbox();
-	@include flex-wrap(wrap);
-	@include align-items(center);
-	@include justify-content(flex-end);
+	vertical-align: text-bottom;
+	.menu-header-sign-in-menu-container, .site-header-cart{
+		display: inline-block;
+	}
+	#header-right-menu{
+		li{
+			display: inline-block;
+		}
+	}
 }
  img.custom-logo {
     height: 95px !important;
@@ -109,5 +117,22 @@ header{
 		.site-header-cart{
 			width: auto;
 		}
+		.site-branding, .main-navigation {
+		    width: auto;
+		    float: none;
+		    margin-right: 0;
+		    display: inline-block;
+		}
+		.site-header-cart{
+			width: auto;
+			float: none;
+			margin: 0;
+		}
 	}
+}
+.main-navigation ul li a:hover, 
+.main-navigation ul li:hover > a, 
+.site-title a:hover, 
+.site-header ul.menu li.current-menu-item > a{
+	color: $dark-gray;
 }

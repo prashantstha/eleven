@@ -64,6 +64,11 @@
 		.half-content{
 			background-image: none !important;
 		}
+		.half-image{
+			img{
+				margin-left: auto;
+			}
+		}
 		.container{
 			width: 100%;
 			padding: 0;
