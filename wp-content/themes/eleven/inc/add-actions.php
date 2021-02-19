@@ -30,7 +30,7 @@ if ( ! function_exists( 'eleven_promotion_bar' ) ) {
 add_action( 'storefront_header', 'eleven_header_left_wrap_open', 19);
 if ( ! function_exists( 'eleven_header_left_wrap_open' ) ) {
 	function eleven_header_left_wrap_open() {
-		echo '<div class="container"><div class="header-left">';
+		echo '<div class="container">';
 	}
 
 }
@@ -39,11 +39,12 @@ add_action( 'storefront_header', 'eleven_header_left_wrap_close', 21);
 if ( ! function_exists( 'eleven_header_left_wrap_close' ) ) {
 	function eleven_header_left_wrap_close() {
         ?>
-<nav id="site-navigation" class="main-navigation" role="navigation"
-    aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
-    <button class="menu-toggle" aria-controls="site-navigation"
-        aria-expanded="false"><span><?php echo esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ); ?></span></button>
-    <?php
+<div class="header-left">
+    <nav id="site-navigation" class="main-navigation" role="navigation"
+        aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
+        <button class="menu-toggle" aria-controls="site-navigation"
+            aria-expanded="false"><span><?php echo esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ); ?></span></button>
+        <?php
 			wp_nav_menu(
 				array(
 					'theme_location'  => 'primary',
@@ -58,8 +59,8 @@ if ( ! function_exists( 'eleven_header_left_wrap_close' ) ) {
 				)
 			);
 			?>
-</nav><!-- #site-navigation -->
-<?php 
+    </nav><!-- #site-navigation -->
+    <?php 
         echo '</div>';
         echo '<div class="header-right">'; 
         
@@ -98,29 +99,29 @@ if ( ! function_exists( 'footer_feature' ) ) {
             $section_bg = 'style="background-image:url(' . $section_background['url'] . ')"';
         }
         ?>
-<div class="footer-features" <?php echo ' ' . $section_bg; ?>>
-    <div class="container">
-        <?php if( have_rows('feature_list', 'option') ): ?>
-        <ul class="service-process d-flex flex-wrap align-items-center justify-content-around">
-            <?php while( have_rows('feature_list', 'option') ): the_row(); 
+    <div class="footer-features" <?php echo ' ' . $section_bg; ?>>
+        <div class="container">
+            <?php if( have_rows('feature_list', 'option') ): ?>
+            <ul class="service-process d-flex flex-wrap align-items-center justify-content-around">
+                <?php while( have_rows('feature_list', 'option') ): the_row(); 
         $icon = get_sub_field('icon');
         $title = get_sub_field('title');
         ?>
-            <li>
-                <?php if( $icon ) { ?>
-                <div class="icon-wrap">
-                    <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['title']; ?>">
-                </div>
-                <?php } ?>
-                <?php if( $title ) { ?>
-                <h3><?php echo $title; ?></h3>
-                <?php } ?>
-            </li>
-            <?php endwhile; ?>
-        </ul>
-        <?php endif; ?>
+                <li>
+                    <?php if( $icon ) { ?>
+                    <div class="icon-wrap">
+                        <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['title']; ?>">
+                    </div>
+                    <?php } ?>
+                    <?php if( $title ) { ?>
+                    <h3><?php echo $title; ?></h3>
+                    <?php } ?>
+                </li>
+                <?php endwhile; ?>
+            </ul>
+            <?php endif; ?>
+        </div>
     </div>
-</div>
-<?php 
+    <?php 
     }
 }
