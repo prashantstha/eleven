@@ -2,11 +2,12 @@
 	&:not(.type_two){
 	  margin: 0 30px;
 	  padding: 30px;
-	  min-height: 405px;
 	    .half-image{
-			position: absolute;
-		    right: -34px;
-		    top: 0;
+			right: -60px;
+			position: relative;
+		}
+		.half-content{
+			padding-left: calc(calc(100vw - 1545px)/2);
 		}
 	}
 	.half-content, .half-image {

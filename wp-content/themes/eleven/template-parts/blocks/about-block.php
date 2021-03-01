@@ -16,7 +16,7 @@ if( !empty($block['anchor']) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'eo-about';
+$className = 'eo-about section';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }

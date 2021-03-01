@@ -16,7 +16,7 @@ if( !empty($block['anchor']) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'featured-category';
+$className = 'featured-category section';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }

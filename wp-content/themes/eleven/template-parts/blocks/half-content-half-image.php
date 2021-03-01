@@ -16,7 +16,7 @@ if( !empty($block['anchor']) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'half-content-half-image';
+$className = 'half-content-half-image section';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
 }
@@ -42,7 +42,9 @@ if( $block_type === 'type_two' ) {
 ?>
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?> <?php echo esc_attr($block_type); ?>"
     <?php echo ' ' . $section_bg; ?>>
-    <div class="container">
+    <?php if( $block_type === 'type_one' ) { ?>
+    <div class="container-full"> <?php } else { ?>
+    <div class="container"><?php } ?>
         <div class="d-flex flex-wrap align-items-center position-relative">
             <div class="half-content" <?php echo ' ' . $half_content_bg; ?>>
                 <?php if( $icon ) { ?>
