@@ -1,8 +1,24 @@
 .footer-features{
 	background-image: url('http://localhost/eleven/wp-content/uploads/2020/08/pattern-footer.png') !important;
-	padding: 115px 0;
+	padding: 50px 0;
+	@include breakpoint(xl){
+		padding: 115px 0;
+	}
+	li{
+		text-align: center;
+	}
+	h3{
+		@include breakpointMax(xl){
+			font-size: 16px;
+			line-height: 22px;
+		}
+	}
 	.icon-wrap{
 		text-align: center;
+		display: inline-block;
+		@include breakpointMax(xl){
+			width: 45px;
+		}
 		img{
 			display: inline-block;
 		}
@@ -11,7 +27,10 @@
 
 footer.site-footer{
 	background-color: $light-gray !important;
-	padding: 0;
+	padding: 45px 0 0;
+	@include breakpoint(md){
+		padding: 0;
+	}
 	a{
 		&:not(.button){
 			&:not(.components-button){
@@ -19,24 +38,39 @@ footer.site-footer{
 			}
 		}
 	}
+	.widget {
+		@include breakpointMax(xl){
+		    margin: 0 0 25px;
+		}
+	}
 	.footer-widgets{
+		@include breakpointMax(xl){
+			padding-top: rem-calc(25);
+		}
 		span.widget-title{
 			color: $white;
-			font-size: 18px;
+			font-size: rem-calc(16);
 			font-weight: $semi;
 			padding: 0;
-			margin-bottom: 25px; 
+			margin-bottom: 15px; 
 			border: none;
+			@include breakpoint(xl){
+				margin-bottom: 25px;
+				font-size: rem-calc(18);
+			}
 		}
 		ul{
 			li{
 				padding-left: 0;
+				@include breakpointMax(xl){
+					margin-bottom: 5px;
+				}
 				&:before{
 					content: none;
 				}
 				a{
 					color: $white;
-					font-size: 15px;
+					font-size: rem-calc(15);
 					text-decoration: none;
 				}
 			}
@@ -47,7 +81,7 @@ footer.site-footer{
 		color: $white;
 		@include flexbox();
 		@include flex-wrap(wrap);
-		padding: 35px 0;
+		padding: rem-calc(35 0);
 		span[role="separator"]{
 			margin: 0 20px;
 		}
@@ -55,4 +89,64 @@ footer.site-footer{
 			text-decoration: none;
 		}
 	}
+}
+
+.footer-bottom{
+	background-color: $dark-gray;
+	padding: rem-calc(15 0);
+	.container{
+		@include flexbox();
+		@include flex-wrap(wrap);
+		@include justify-content(space-between);
+		@include align-items(center);
+	}
+	.copy-right{
+		color: $white;
+		margin-right: 20px;
+		font-size: rem-calc(14);
+	}
+	.menu-footer-menu-container{
+		margin-right: auto;
+		ul{
+			li{
+				a{
+					font-size: 14px;
+					&:before{
+						content: none;
+						height: 14px;
+						width: 1px;
+						display: inline-block;
+						background-color: $white;
+						margin-right: 20px;
+						vertical-align: sub;
+						@include breakpoint(md){
+							content: "";
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.menu-footer-menu-container, .social-icon-wrap {
+	ul {
+		li {
+    		display: inline-block;
+    		margin-right: 21px;
+    		a{
+    			font-size: rem-calc(15);
+    			text-decoration: none;
+    		}
+    	}
+    }
+}
+
+li.social-icon-item {
+	a {
+		img {
+    		max-width: 22px;
+    		margin-top: 15px;
+    	}
+    }
 }

@@ -16,4 +16,26 @@ h2.has-text-align-center{
 	.sbi_follow_btn{
 		display: none;
 	}
+	.sb_photo{
+		height: 200px !important;
+		@include breakpointMax(md){
+			height: 115px !important;
+		}
+	}
+}
+
+#sb_instagram.sbi_col_10 #sbi_images 
+.sbi_item, 
+#sb_instagram.sbi_col_3 #sbi_images .sbi_item, 
+#sb_instagram.sbi_col_4 #sbi_images .sbi_item, 
+#sb_instagram.sbi_col_5 #sbi_images .sbi_item, 
+#sb_instagram.sbi_col_6 #sbi_images .sbi_item, 
+#sb_instagram.sbi_col_7 #sbi_images .sbi_item, 
+#sb_instagram.sbi_col_8 #sbi_images .sbi_item, 
+#sb_instagram.sbi_col_9 #sbi_images .sbi_item{
+	width: 16.6666%;
+	@include breakpointMax(md){
+		width: 33.333333%;
+		margin-bottom: 2px !important;
+	}
 }

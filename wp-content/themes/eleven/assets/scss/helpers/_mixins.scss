@@ -127,9 +127,9 @@
     @media (min-width: 1640px) { @content; }
   }
   @else if $point == xxl {
-    @media (min-width: 1480px) { @content; }
+    @media (min-width: 1441px) { @content; }
   }
-  @else if $point == lm {
+  @else if $point == lm { 
     @media (min-width: 1366px) { @content; }
   }
   @else if $point == xl {
